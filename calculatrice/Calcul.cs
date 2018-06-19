@@ -26,9 +26,12 @@ namespace Calculatrice
             set
             {
                 _chaineCalc = value;
-                if (char.IsDigit(_chaineCalc[ChaineCalc.Length - 1]))
+                if(_chaineCalc.Length > 0)
                 {
-                    processCalc();
+                    if (char.IsDigit(_chaineCalc[ChaineCalc.Length - 1]))
+                    {
+                        processCalc();
+                    }
                 }
             } 
         }
