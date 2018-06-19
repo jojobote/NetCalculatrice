@@ -20,14 +20,6 @@
 
     <Window.Resources>
         <Image x:Key="returnArrow" Source="Images\Arrow1LeftOrange.png" />
-        <Style TargetType="Button">
-            <Setter Property="FontFamily" Value="Helvetica" />
-            <Setter Property="FontSize" Value="14" />
-            <Setter Property="BorderBrush" Value="Orange" />
-            <Setter Property="BorderThickness" Value="2" />
-            <Setter Property="Foreground" Value="Black" />
-            <Setter Property="Margin" Value="1.5" />
-        </Style>
     </Window.Resources>
 
     <Grid>
@@ -61,27 +53,27 @@
             <TextBox AcceptsReturn="True" />
         </DockPanel>
 
-        <Button Content="0" Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="2" Click="buttonCalcClick"/>
-        <Button Content="," Grid.Column="2" Grid.Row="7" Grid.ColumnSpan="1" Click="buttonCalcClick"/>
-        <Button Content="1" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="1" Click="buttonCalcClick"/>
-        <Button Content="2" Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="1" Click="buttonCalcClick"/>
-        <Button Content="3" Grid.Column="2" Grid.Row="6" Grid.ColumnSpan="1" Click="buttonCalcClick"/>
-        <Button Content="4" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="1" Click="buttonCalcClick"/>
-        <Button Content="5" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="1" Click="buttonCalcClick"/>
-        <Button Content="6" Grid.Column="2" Grid.Row="5" Grid.ColumnSpan="1" Click="buttonCalcClick"/>
-        <Button Content="7" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="1" Click="buttonCalcClick"/>
-        <Button Content="8" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="1" Click="buttonCalcClick"/>
-        <Button Content="9" Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="1" Click="buttonCalcClick"/>
-        <Button Content="*" Grid.Column="3" Grid.Row="4" Grid.ColumnSpan="1" Click="buttonCalcClick"/>
-        <Button Content="/" Grid.Column="3" Grid.Row="5" Grid.ColumnSpan="1" Click="buttonCalcClick"/>
-        <Button Content="+" Grid.Column="3" Grid.Row="6" Grid.ColumnSpan="1" Click="buttonCalcClick"/>
-        <Button Content="-" Grid.Column="3" Grid.Row="7" Grid.ColumnSpan="1" Click="buttonCalcClick"/>
+        <Button Content="0" Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="2"/>
+        <Button Content="," Grid.Column="2" Grid.Row="7" Grid.ColumnSpan="1"/>
+        <Button Content="1" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="1"/>
+        <Button Content="2" Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="1"/>
+        <Button Content="3" Grid.Column="2" Grid.Row="6" Grid.ColumnSpan="1"/>
+        <Button Content="4" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="1"/>
+        <Button Content="5" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="1"/>
+        <Button Content="6" Grid.Column="2" Grid.Row="5" Grid.ColumnSpan="1"/>
+        <Button Content="7" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="1"/>
+        <Button Content="8" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="1"/>
+        <Button Content="9" Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="1"/>
+        <Button Content="*" Grid.Column="3" Grid.Row="4" Grid.ColumnSpan="1"/>
+        <Button Content="/" Grid.Column="3" Grid.Row="5" Grid.ColumnSpan="1"/>
+        <Button Content="+" Grid.Column="3" Grid.Row="6" Grid.ColumnSpan="1"/>
+        <Button Content="-" Grid.Column="3" Grid.Row="7" Grid.ColumnSpan="1"/>
         <Button Content="CE" Grid.Column="4" Grid.Row="5" Grid.ColumnSpan="1"/>
         <Button Content="C" Grid.Column="4" Grid.Row="6" Grid.ColumnSpan="1"/>
         <Button Content="=" Grid.Column="4" Grid.Row="7" Grid.ColumnSpan="1" Click="Button_equal"/>
         <Button Content="{StaticResource returnArrow}" Grid.Column="4" Grid.Row="4" Grid.ColumnSpan="1"/>
-        <Button Content="(" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="1" Click="buttonCalcClick"/>
-        <Button Content=")" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="1" Click="buttonCalcClick"/>
+        <Button Content="(" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="1"/>
+        <Button Content=")" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="1"/>
 
         <Border BorderThickness="2" BorderBrush="Orange" Grid.Row="1" Grid.ColumnSpan="5" Margin="1.5">
             <materialDesign:Card>
@@ -112,7 +104,7 @@
                     <RowDefinition Height="50"/>
                 </Grid.RowDefinitions>
                 <TextBlock Grid.Row="0" Text="{Binding CurrentChaineCalc}"/>
-                <TextBlock Grid.Row="1" Text="{Binding CurrentResult}" FontWeight="Bold" FontSize="20"/>
+                <TextBlock Grid.Row="1" Text="{Binding CurrentResult}" FontWeight="Bold" FontSize="20"/> 
             </Grid>
         </Border>
     </Grid>
