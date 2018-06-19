@@ -103,8 +103,8 @@
                     <RowDefinition Height="40"/>
                     <RowDefinition Height="50"/>
                 </Grid.RowDefinitions>
-                <TextBlock Grid.Row="0" Text="{Binding CurrentChaineCalc}"/>
-                <TextBlock Grid.Row="1" Text="{Binding CurrentResult}" FontWeight="Bold" FontSize="20"/> 
+                <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}" Grid.Row="0" Text="{Binding CurrentChaineCalc}"/>
+                <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}" Grid.Row="1" Text="{Binding CurrentResult}" FontWeight="Bold" FontSize="20" Name="testBoxResult"/>
             </Grid>
         </Border>
     </Grid>
