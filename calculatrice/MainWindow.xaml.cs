@@ -84,10 +84,18 @@ namespace Calculatrice
             CurrentChaineCalc = (c.ChaineCalc == "0") ? valeur : String.Concat(c.ChaineCalc, valeur);
             CurrentResult = c.Result.ToString();
         }
+
+        public void removeLast()
+        {
+            if(CurrentChaineCalc.Length > 0)
+                CurrentChaineCalc = CurrentChaineCalc.Remove(CurrentChaineCalc.Length - 1);
+        }
+
         private void button_0(object Sender, RoutedEventArgs e)
         {
             Button btn = Sender as Button;
             addCalc(btn.Content.ToString());
+            resetFocus(btn);
         }
         
 
@@ -100,6 +108,8 @@ namespace Calculatrice
                 case Key.Cancel:
                     break;
                 case Key.Back:
+                    removeLast();
+                    CurrentResult = c.Result.ToString();
                     break;
                 case Key.Tab:
                     break;
@@ -205,7 +215,6 @@ namespace Calculatrice
         private void Button_equal(object sender, RoutedEventArgs e)
         {
             triggerCalc();
-            MyWindow.Focus();
         }
 
         private void Click_close(object sender, RoutedEventArgs e)
@@ -222,11 +231,10 @@ namespace Calculatrice
         {
             if (leBtn == null) return;
 
-            /*var scope = FocusManager.GetFocusScope(leBtn);
-            FocusManager.SetFocusedElement(scope, null);*/
-
+            var scope = FocusManager.GetFocusScope(leBtn);
+            FocusManager.SetFocusedElement(scope, null);
             Keyboard.ClearFocus();
-            MyWindow.Focus();
+            Keyboard.Focus(this);
         }
     }
 

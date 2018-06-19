@@ -34,7 +34,7 @@ namespace Calculatrice
         }
         public double Result { get => _result; set => _result = value; }
 
-        public void removeLast() { _chaineCalc = _chaineCalc.Remove(_chaineCalc.Length - 1); }
+        //public void removeLast() { ChaineCalc = _chaineCalc.Remove(_chaineCalc.Length - 1); }
 
         public void processCalc()
         {
