@@ -29,8 +29,8 @@ namespace Calculatrice
 
         public MainWindow()
         {
+            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             InitializeComponent();           
-
         }
 
 
@@ -91,7 +91,7 @@ namespace Calculatrice
                 CurrentChaineCalc = CurrentChaineCalc.Remove(CurrentChaineCalc.Length - 1);
         }
 
-        private void button_0(object Sender, RoutedEventArgs e)
+        private void buttonCalcClick(object Sender, RoutedEventArgs e)
         {
             Button btn = Sender as Button;
             addCalc(btn.Content.ToString());
