@@ -29,8 +29,8 @@ namespace Calculatrice
 
         public MainWindow()
         {
+            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             InitializeComponent();           
-
         }
 
 
@@ -85,6 +85,7 @@ namespace Calculatrice
             CurrentResult = c.Result.ToString();
         }
 
+<<<<<<< Updated upstream
         public void removeLast()
         {
             if(CurrentChaineCalc.Length > 0)
@@ -92,6 +93,9 @@ namespace Calculatrice
         }
 
         private void button_0(object Sender, RoutedEventArgs e)
+=======
+        private void buttonCalcClick(object Sender, RoutedEventArgs e)
+>>>>>>> Stashed changes
         {
             Button btn = Sender as Button;
             addCalc(btn.Content.ToString());

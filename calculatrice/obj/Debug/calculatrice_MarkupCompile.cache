@@ -4,16 +4,28 @@
 winexe
 C#
 .cs
+<<<<<<< Updated upstream
 F:\NetCalculatrice\calculatrice\obj\Debug\
+=======
+F:\NetCalculatrice\NetCalculatrice\calculatrice\obj\Debug\
+>>>>>>> Stashed changes
 calculatrice
 none
 false
 DEBUG;TRACE
+<<<<<<< Updated upstream
 F:\NetCalculatrice\calculatrice\App.xaml
 11151548125
 
 7155061547
 15-461003065
+=======
+F:\NetCalculatrice\NetCalculatrice\calculatrice\App.xaml
+11151548125
+
+7155061547
+15-497025010
+>>>>>>> Stashed changes
 MainWindow.xaml;
 
 False

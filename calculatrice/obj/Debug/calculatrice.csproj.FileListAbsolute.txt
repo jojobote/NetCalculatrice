@@ -36,6 +36,7 @@ F:\calculatrice\calculatrice\obj\Debug\calculatrice.Properties.Resources.resourc
 F:\calculatrice\calculatrice\obj\Debug\Calculatrice.csproj.GenerateResource.Cache
 F:\calculatrice\calculatrice\obj\Debug\calculatrice.exe
 F:\calculatrice\calculatrice\obj\Debug\calculatrice.pdb
+<<<<<<< Updated upstream
 F:\NetCalculatrice\calculatrice\bin\Debug\calculatrice.exe.config
 F:\NetCalculatrice\calculatrice\bin\Debug\calculatrice.exe
 F:\NetCalculatrice\calculatrice\bin\Debug\calculatrice.pdb
@@ -55,3 +56,24 @@ F:\NetCalculatrice\calculatrice\obj\Debug\calculatrice.Properties.Resources.reso
 F:\NetCalculatrice\calculatrice\obj\Debug\Calculatrice.csproj.GenerateResource.Cache
 F:\NetCalculatrice\calculatrice\obj\Debug\calculatrice.exe
 F:\NetCalculatrice\calculatrice\obj\Debug\calculatrice.pdb
+=======
+F:\NetCalculatrice\NetCalculatrice\calculatrice\bin\Debug\calculatrice.exe.config
+F:\NetCalculatrice\NetCalculatrice\calculatrice\bin\Debug\calculatrice.exe
+F:\NetCalculatrice\NetCalculatrice\calculatrice\bin\Debug\calculatrice.pdb
+F:\NetCalculatrice\NetCalculatrice\calculatrice\bin\Debug\MaterialDesignColors.dll
+F:\NetCalculatrice\NetCalculatrice\calculatrice\bin\Debug\MaterialDesignThemes.Wpf.dll
+F:\NetCalculatrice\NetCalculatrice\calculatrice\bin\Debug\MaterialDesignThemes.Wpf.pdb
+F:\NetCalculatrice\NetCalculatrice\calculatrice\bin\Debug\MaterialDesignThemes.Wpf.xml
+F:\NetCalculatrice\NetCalculatrice\calculatrice\obj\Debug\Calculatrice.csprojResolveAssemblyReference.cache
+F:\NetCalculatrice\NetCalculatrice\calculatrice\obj\Debug\MainWindow.g.cs
+F:\NetCalculatrice\NetCalculatrice\calculatrice\obj\Debug\App.g.cs
+F:\NetCalculatrice\NetCalculatrice\calculatrice\obj\Debug\calculatrice_MarkupCompile.cache
+F:\NetCalculatrice\NetCalculatrice\calculatrice\obj\Debug\calculatrice_MarkupCompile.lref
+F:\NetCalculatrice\NetCalculatrice\calculatrice\obj\Debug\App.baml
+F:\NetCalculatrice\NetCalculatrice\calculatrice\obj\Debug\MainWindow.baml
+F:\NetCalculatrice\NetCalculatrice\calculatrice\obj\Debug\calculatrice.g.resources
+F:\NetCalculatrice\NetCalculatrice\calculatrice\obj\Debug\calculatrice.Properties.Resources.resources
+F:\NetCalculatrice\NetCalculatrice\calculatrice\obj\Debug\Calculatrice.csproj.GenerateResource.Cache
+F:\NetCalculatrice\NetCalculatrice\calculatrice\obj\Debug\calculatrice.exe
+F:\NetCalculatrice\NetCalculatrice\calculatrice\obj\Debug\calculatrice.pdb
+>>>>>>> Stashed changes
