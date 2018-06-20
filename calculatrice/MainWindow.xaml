@@ -25,8 +25,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
-            <RowDefinition Height="300"/>
-            <RowDefinition Height="100"/>
+            <RowDefinition Height="200"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
@@ -41,41 +40,107 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <DockPanel>
-            <Menu DockPanel.Dock="Top" Margin="0" VerticalContentAlignment="Top">
-                <MenuItem Header="File">
-                    <MenuItem Header="_Historique" />
-                    <MenuItem Header="_Supprimer l'Historique" Click="Click_reset_histo"/>
-                    <Separator />
-                    <MenuItem Header="_Exit" Click="Click_close"/>
-                </MenuItem>
-            </Menu>
-            <TextBox AcceptsReturn="True" />
+
+        <Menu Margin="0" VerticalContentAlignment="Top" Grid.Row="0">
+            <MenuItem Header="File">
+                <Separator />
+                <MenuItem Header="_Supprimer l'Historique" Click="Click_reset_histo"/>
+                <Separator />
+                <MenuItem Header="_Exit" Click="Click_close"/>
+            </MenuItem>
+        </Menu>
+
+        <Label Grid.Row="0" Grid.Column="3" Content="Historique" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <ToggleButton Height="Auto" Width="Auto" Grid.Row="0" Grid.Column="4">
+            <ToggleButton.Triggers>
+                <EventTrigger RoutedEvent="ToggleButton.Checked">
+                    <BeginStoryboard>
+                        <Storyboard >
+                            <DoubleAnimation Storyboard.TargetName="MyDockPanel" 
+                                         Storyboard.TargetProperty="Opacity"
+                                         From="0" To="1" 
+                                         Duration="0:0:0.2"/>
+                            <DoubleAnimation Storyboard.TargetName="textBlockCurrentChaineCalc" 
+                                         Storyboard.TargetProperty="Opacity"
+                                         From="1" To="0" 
+                                         Duration="0"/>
+                            <DoubleAnimation Storyboard.TargetName="textBlockResult" 
+                                         Storyboard.TargetProperty="Opacity"
+                                         From="1" To="0" 
+                                         Duration="0"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="ToggleButton.Unchecked">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="MyDockPanel" 
+                                        Storyboard.TargetProperty="Opacity"
+                                        From="1" To="0" 
+                                        Duration="0:0:0.2"/>
+                            <DoubleAnimation Storyboard.TargetName="textBlockCurrentChaineCalc" 
+                                         Storyboard.TargetProperty="Opacity"
+                                         From="0" To="1" 
+                                         Duration="0"/>
+                            <DoubleAnimation Storyboard.TargetName="textBlockResult" 
+                                         Storyboard.TargetProperty="Opacity"
+                                         From="0" To="1" 
+                                         Duration="0"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </ToggleButton.Triggers>
+        </ToggleButton>
+
+        <DockPanel Name="MyDockPanel" Background="LightGray" Opacity="0" Grid.Row="1" Grid.ColumnSpan="5">
+            <Border BorderThickness="2" BorderBrush="Black" Grid.Row="1" Grid.ColumnSpan="5" Margin="1.5">
+                <materialDesign:Card>
+                    <ListBox Grid.Row="1" Grid.ColumnSpan="5" ItemsSource="{Binding MyList}" Background="LightGray">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical">
+
+                                    <StackPanel Orientation="Horizontal">
+
+                                        <TextBlock Text="{Binding ChaineCalc}" />
+                                    </StackPanel>
+
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding Result}" />
+                                    </StackPanel>
+
+                                </StackPanel>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ListBox>
+                </materialDesign:Card>
+            </Border>
         </DockPanel>
 
-        <Button Content="0" Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="2" Click="buttonCalcClick"/>
-        <Button Content="," Grid.Column="2" Grid.Row="7" Grid.ColumnSpan="1" Click="buttonCalcClick"/>
-        <Button Content="1" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="1" Click="buttonCalcClick"/>
-        <Button Content="2" Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="1" Click="buttonCalcClick"/>
-        <Button Content="3" Grid.Column="2" Grid.Row="6" Grid.ColumnSpan="1" Click="buttonCalcClick"/>
-        <Button Content="4" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="1" Click="buttonCalcClick"/>
-        <Button Content="5" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="1" Click="buttonCalcClick"/>
-        <Button Content="6" Grid.Column="2" Grid.Row="5" Grid.ColumnSpan="1" Click="buttonCalcClick"/>
-        <Button Content="7" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="1" Click="buttonCalcClick"/>
-        <Button Content="8" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="1" Click="buttonCalcClick"/>
-        <Button Content="9" Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="1" Click="buttonCalcClick"/>
-        <Button Content="*" Grid.Column="3" Grid.Row="4" Grid.ColumnSpan="1" Click="buttonCalcClick"/>
-        <Button Content="/" Grid.Column="3" Grid.Row="5" Grid.ColumnSpan="1" Click="buttonCalcClick"/>
-        <Button Content="+" Grid.Column="3" Grid.Row="6" Grid.ColumnSpan="1" Click="buttonCalcClick"/>
-        <Button Content="-" Grid.Column="3" Grid.Row="7" Grid.ColumnSpan="1" Click="buttonCalcClick"/>
-        <Button Content="CE" Grid.Column="4" Grid.Row="5" Grid.ColumnSpan="1"/>
-        <Button Content="C" Grid.Column="4" Grid.Row="6" Grid.ColumnSpan="1"/>
-        <Button Content="=" Grid.Column="4" Grid.Row="7" Grid.ColumnSpan="1" Click="Button_equal"/>
-        <Button Content="{StaticResource returnArrow}" Grid.Column="4" Grid.Row="4" Grid.ColumnSpan="1"/>
-        <Button Content="(" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="1" Click="buttonCalcClick"/>
-        <Button Content=")" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="1" Click="buttonCalcClick"/>
 
-        <Border BorderThickness="2" BorderBrush="Orange" Grid.Row="1" Grid.ColumnSpan="5" Margin="1.5">
+        <Button Content="0" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2" Click="buttonCalcClick" Height="Auto"/>
+        <Button Content="," Grid.Column="2" Grid.Row="6" Grid.ColumnSpan="1" Click="buttonCalcClick" Height="Auto"/>
+        <Button Content="1" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="1" Click="buttonCalcClick" Height="Auto"/>
+        <Button Content="2" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="1" Click="buttonCalcClick" Height="Auto"/>
+        <Button Content="3" Grid.Column="2" Grid.Row="5" Grid.ColumnSpan="1" Click="buttonCalcClick" Height="Auto"/>
+        <Button Content="4" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="1" Click="buttonCalcClick" Height="Auto"/>
+        <Button Content="5" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="1" Click="buttonCalcClick" Height="Auto"/>
+        <Button Content="6" Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="1" Click="buttonCalcClick" Height="Auto"/>
+        <Button Content="7" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="1" Click="buttonCalcClick" Height="Auto"/>
+        <Button Content="8" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="1" Click="buttonCalcClick" Height="Auto"/>
+        <Button Content="9" Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="1" Click="buttonCalcClick" Height="Auto"/>
+        <Button Content="*" Grid.Column="3" Grid.Row="3" Grid.ColumnSpan="1" Click="buttonCalcClick" Height="Auto"/>
+        <Button Content="/" Grid.Column="3" Grid.Row="4" Grid.ColumnSpan="1" Click="buttonCalcClick" Height="Auto"/>
+        <Button Content="+" Grid.Column="3" Grid.Row="5" Grid.ColumnSpan="1" Click="buttonCalcClick" Height="Auto"/>
+        <Button Content="-" Grid.Column="3" Grid.Row="6" Grid.ColumnSpan="1" Click="buttonCalcClick" Height="Auto"/>
+        <Button Content="CE" Grid.Column="4" Grid.Row="4" Grid.ColumnSpan="1" Height="Auto"/>
+        <Button Content="C" Grid.Column="4" Grid.Row="5" Grid.ColumnSpan="1" Height="Auto"/>
+        <Button Content="=" Grid.Column="4" Grid.Row="6" Grid.ColumnSpan="1" Click="Button_equal" Height="Auto"/>
+        <Button Content="{StaticResource returnArrow}" Grid.Column="4" Grid.Row="3" Grid.ColumnSpan="1" Height="Auto"/>
+        <Button Content="(" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="1" Click="buttonCalcClick" Height="Auto"/>
+        <Button Content=")" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="1" Click="buttonCalcClick" Height="Auto"/>
+
+        <!--<Border BorderThickness="2" BorderBrush="Gray" Grid.Row="1" Grid.ColumnSpan="5" Margin="1.5">
             <materialDesign:Card>
                 <ListBox Grid.Row="1" Grid.ColumnSpan="5" ItemsSource="{Binding MyList}">
                     <ItemsControl.ItemTemplate>
@@ -83,7 +148,6 @@
                             <StackPanel Orientation="Vertical">
 
                                 <StackPanel Orientation="Horizontal">
-                                    <!--<TextBlock Text="{Binding ChaineCalc}" />-->
                                     <TextBlock Text="{Binding ChaineCalc}" />
                                 </StackPanel>
 
@@ -96,15 +160,20 @@
                     </ItemsControl.ItemTemplate>
                 </ListBox>
             </materialDesign:Card>
-        </Border>
-        <Border BorderThickness="2" BorderBrush="Orange" Grid.Row="2" Grid.ColumnSpan="5" Margin="1.5">
+        </Border>-->
+
+        <Border BorderThickness="2" BorderBrush="Gray" Grid.Row="1" Grid.ColumnSpan="5" Margin="1.5">
             <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="202*"/>
+                    <ColumnDefinition Width="383*"/>
+                </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="200"/>
                 </Grid.RowDefinitions>
-                <TextBlock Grid.Row="0" Text="{Binding CurrentChaineCalc}"/>
-                <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}" Grid.Row="1" Text="{Binding CurrentResult}" FontWeight="Bold" FontSize="20" Name="testBoxResult"/>
+                <TextBlock Grid.Row="0" Text="{Binding CurrentChaineCalc}" Name="textBlockCurrentChaineCalc" Grid.ColumnSpan="2"/>
+                <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}" Grid.Row="1" Text="{Binding CurrentResult}" FontWeight="Bold" FontSize="20" Name="textBlockResult" Grid.ColumnSpan="2"/>
             </Grid>
         </Border>
     </Grid>

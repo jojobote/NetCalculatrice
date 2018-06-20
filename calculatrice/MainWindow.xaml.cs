@@ -41,6 +41,7 @@ namespace Calculatrice
             {
                 if (c.ChaineCalc != value)
                 {
+                    textBlockCurrentChaineCalc.Visibility = Visibility.Visible;
                     c.ChaineCalc = value;
                     PropertyChanged(this, new PropertyChangedEventArgs(nameof(CurrentChaineCalc)));
                 }
@@ -73,6 +74,7 @@ namespace Calculatrice
         {
             if(c.ChaineCalc != "0")
             {
+                textBlockCurrentChaineCalc.Visibility = Visibility.Hidden;
                 c.processCalc();
                 MyList.Add(c);
                 c = new Calcul();
