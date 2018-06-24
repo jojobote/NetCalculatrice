@@ -87,7 +87,7 @@ namespace Calculatrice
                 textBlockCurrentChaineCalc.Visibility = Visibility.Hidden;
                 c.processCalc();
                 MyList.Add(c);
-                c = new Calcul();
+                c = new Calcul(c.Result.ToString());
             }
         }
 
@@ -255,10 +255,6 @@ namespace Calculatrice
             c = new Calcul();
             CurrentChaineCalc = "0";
             CurrentResult = "0";
-        }
-        private void buttonCEClick(object sender, RoutedEventArgs e)
-        {
-
         }
 
         private void histoClick(object sender, MouseButtonEventArgs e)

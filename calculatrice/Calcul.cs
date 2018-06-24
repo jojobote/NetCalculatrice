@@ -20,6 +20,13 @@ namespace Calculatrice
             _result = 0;
         }
 
+        public Calcul(String resultActu)
+        {
+            dt = new DataTable();
+            _chaineCalc = resultActu;
+            _result = Convert.ToDouble(dt.Compute(_chaineCalc, "").ToString());
+        }
+
         public string ChaineCalc
         {
             get => _chaineCalc;
