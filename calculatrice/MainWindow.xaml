@@ -102,7 +102,7 @@
 
                                     <StackPanel Orientation="Horizontal">
 
-                                        <TextBlock Text="{Binding ChaineCalc}" />
+                                        <TextBlock Text="{Binding ChaineCalc}" MouseDown="histoClick"/>
                                     </StackPanel>
 
                                     <StackPanel Orientation="Horizontal">
@@ -133,10 +133,10 @@
         <Button Content="/" Grid.Column="3" Grid.Row="4" Grid.ColumnSpan="1" Click="buttonCalcClick" Height="Auto"/>
         <Button Content="+" Grid.Column="3" Grid.Row="5" Grid.ColumnSpan="1" Click="buttonCalcClick" Height="Auto"/>
         <Button Content="-" Grid.Column="3" Grid.Row="6" Grid.ColumnSpan="1" Click="buttonCalcClick" Height="Auto"/>
-        <Button Content="CE" Grid.Column="4" Grid.Row="4" Grid.ColumnSpan="1" Height="Auto"/>
-        <Button Content="C" Grid.Column="4" Grid.Row="5" Grid.ColumnSpan="1" Height="Auto"/>
+        <Button Content="" Grid.Column="4" Grid.Row="4" Grid.ColumnSpan="1" Click="buttonCEClick" Height="Auto"/>
+        <Button Content="C" Grid.Column="4" Grid.Row="5" Grid.ColumnSpan="1" Click="buttonCClick" Height="Auto"/>
         <Button Content="=" Grid.Column="4" Grid.Row="6" Grid.ColumnSpan="1" Click="Button_equal" Height="Auto"/>
-        <Button Content="{StaticResource returnArrow}" Grid.Column="4" Grid.Row="3" Grid.ColumnSpan="1" Height="Auto"/>
+        <Button Content="{StaticResource returnArrow}" Grid.Column="4" Grid.Row="3" Grid.ColumnSpan="1" Click="buttonArrowClick" Height="Auto"/>
         <Button Content="(" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="1" Click="buttonCalcClick" Height="Auto"/>
         <Button Content=")" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="1" Click="buttonCalcClick" Height="Auto"/>
 

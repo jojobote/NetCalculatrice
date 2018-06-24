@@ -50,7 +50,17 @@ namespace Calculatrice
         }
         public String CurrentResult
         {
-            get { return c.Result.ToString(); }
+            get
+            {
+                if (c.Result.ToString() == "NaN")
+                {
+                    return "Err";
+                }
+                else
+                {
+                    return c.Result.ToString();
+                }
+            }
             set
             {
                 PropertyChanged(this, new PropertyChangedEventArgs(nameof(CurrentResult)));
@@ -237,6 +247,35 @@ namespace Calculatrice
             FocusManager.SetFocusedElement(scope, null);
             Keyboard.ClearFocus();
             Keyboard.Focus(this);
+        }
+
+        private void buttonCClick(object sender, RoutedEventArgs e)
+        {
+            textBlockCurrentChaineCalc.Visibility = Visibility.Hidden;
+            c = new Calcul();
+            CurrentChaineCalc = "0";
+            CurrentResult = "0";
+        }
+        private void buttonCEClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void histoClick(object sender, MouseButtonEventArgs e)
+        {
+            TextBlock tb = sender as TextBlock;
+            CurrentChaineCalc = tb.Text.ToString();
+            CurrentResult = c.Result.ToString();
+            var scope = FocusManager.GetFocusScope(tb);
+            FocusManager.SetFocusedElement(scope, null);
+            Keyboard.ClearFocus();
+            Keyboard.Focus(this);
+        }
+
+        private void buttonArrowClick(object sender, RoutedEventArgs e)
+        {
+            removeLast();
+            CurrentResult = c.Result.ToString();
         }
     }
 
